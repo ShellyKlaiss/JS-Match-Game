@@ -15,7 +15,6 @@ function flipCard() {
         firstCard = this;
         return;
     }
-
         secondCard = this;
 
         checkForMatch(); {
