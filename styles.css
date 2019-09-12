@@ -18,14 +18,14 @@ body {
 
 
 .memory-game {
-    width: 50%;
-    height: 50%;   
+    width: 80%;
+    height: 80%;   
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
-   position: absolute;
-   margin-left: 25%;
-   margin-top: 25%;
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 25%;
 }
 
 .memory-card {
@@ -60,4 +60,9 @@ body {
 
 .front-face {
     transform: rotateY(180deg);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
 }
