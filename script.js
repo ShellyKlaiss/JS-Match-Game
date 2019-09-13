@@ -61,3 +61,28 @@ function resetBoard() {
 
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+// Timer
+
+i = 60;
+function onTimer() {
+  document.getElementById('mycounter').innerHTML = i;
+  i--;
+  if (i < 0) {
+    alert('Times up!');
+  }
+  else {
+    setTimeout(onTimer, 1000);
+  }
+}
+
+
+
+
+
+
+
+
+
+
