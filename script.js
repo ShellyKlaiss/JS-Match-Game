@@ -80,5 +80,21 @@ function getRandomCard() {
     const index = Math.floor(Math.random() * images.length);
     return images.splice(index, 1);
 }
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+// Timer
+
+i = 60;
+function onTimer() {
+  document.getElementById('mycounter').innerHTML = i;
+  i--;
+  if (i < 0) {
+    alert('Times up!');
+  }
+  else {
+    setTimeout(onTimer, 1000);
+  }
+}
 
 
