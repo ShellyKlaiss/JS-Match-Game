@@ -4,19 +4,19 @@ let images = [];
 
 function startGame() {
     images = [
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlUXJX9-N-gWxdKEC0uBnhsPl-UA1chnxyiA3osoZ7IKf2IgN4w',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlUXJX9-N-gWxdKEC0uBnhsPl-UA1chnxyiA3osoZ7IKf2IgN4w',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7gtGKGkDC21XIkpQpLcEPBmLffDYyWR7TOla4s3WtQnVfV8z',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj7gtGKGkDC21XIkpQpLcEPBmLffDYyWR7TOla4s3WtQnVfV8z',
-        'https://media2.fdncms.com/metrotimes/imager/u/original/9315911/background-of-valentine_s-day-conversation-hearts-candy-870964280_1258x838.jpeg',
-        'https://media2.fdncms.com/metrotimes/imager/u/original/9315911/background-of-valentine_s-day-conversation-hearts-candy-870964280_1258x838.jpeg',
-        'https://images-na.ssl-images-amazon.com/images/I/819mKKHWtUL._SY355_.jpg',
-        'https://images-na.ssl-images-amazon.com/images/I/819mKKHWtUL._SY355_.jpg',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8GCPwks70MKl3kScgyAhpQpHzvWOyWihEVOVZ61pLne-hLNfKsw',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8GCPwks70MKl3kScgyAhpQpHzvWOyWihEVOVZ61pLne-hLNfKsw',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAT0RvIa8SsIscP7ycGbHXZ9HIE724NvCl8odNj3a7yIjjPqd_',
-        ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAT0RvIa8SsIscP7ycGbHXZ9HIE724NvCl8odNj3a7yIjjPqd_'
-    ]
+        'images/vernors.png',
+        'images/vernors.png',
+        'images/better_made.png',
+        'images/better_made.png',
+        'images/faygo.png',
+        'images/faygo.png',
+        'images/coney_dog.png',
+        'images/coney_dog.png',
+        'images/cider_donuts.png',
+        'images/cider_donuts.png',
+        'images/fudge.png',
+        'images/fudge.png'
+]
 
     cards.forEach(card => {
         const image = card.querySelector('.front-face');
@@ -27,11 +27,11 @@ function startGame() {
 }
 
 function resetGame() {
-resetTimer();
-    
-cards.forEach(card => {
-card.classList.remove('flip');
- })
+    resetTimer();
+
+    cards.forEach(card => {
+        card.classList.remove('flip');
+    })
 }
 
 let hasFlippedCard = false;
@@ -64,7 +64,7 @@ function checkForMatch() {
     } else {
         unflipCards();
     }
-} 
+}
 
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
