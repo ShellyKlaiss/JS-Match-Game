@@ -67,8 +67,9 @@ function checkForMatch() {
         cardCounter++;
         // console.log(cardCounter);
         if(cardCounter === 6){
-            modalWindow();
-            delayedModalWindow();   
+             modalWindow();
+             stopTimer();
+            // delayedModalWindow();   
         }
         disableCards();
     } else {
@@ -76,21 +77,14 @@ function checkForMatch() {
     }
 }
 
-function modalWindow() {
-    if(cardCounter === 6){
-        modal = function(event){
-            modal.style.display = "block";
+ function modalWindow() {
 
-        }            span.onclick = function() {
-            modal.style.display = "none";
-          }
-          window = function(event) {
-            if (event.target == modal) {
-              modal.style.display = "none";
-            }
-          }
-    }
+    modal.style.visibility = 'visible';
 
+};
+
+function modalWindowClose() {
+    modal.style.visibility = 'hidden';
 }
 
 function disableCards() {
@@ -143,6 +137,11 @@ function onTimer() {
     }, 1000);
 }
 
+function stopTimer() {
+    window.clearInterval(interval);
+    status="stopped"
+}
+
 function resetTimer() {
     second = 0;
     minute = 0;
@@ -157,15 +156,9 @@ function resetCardCount() {
     cardCounter = 0;
 }
 
-const timeoutID;
-
-function delayedModalWindow() {
-  timeoutID = window.setTimeout( event => {
-      document.getElementsByClassName('.modal')
-  },1500);
-};
-
-const myModal = document.getElementById("myModal");
-const modal = document.getElementsByClassName("modal");
-const span = document.getElementsByClassName("close")[0];
-const window = document.getElementsByClassName("modal-content");
+const myModal = document.querySelector("#myModal");
+const modal = document.querySelector(".modal");
+const span = document.querySelector(".close")[0];
+// const window = document.querySelector(".modal-content");
+const tryAgain = document.querySelector(".tryAgain");
+const quit = document.querySelector(".quit")
