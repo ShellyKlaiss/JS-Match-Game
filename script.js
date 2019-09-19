@@ -27,11 +27,11 @@ function startGame() {
 }
 
 function resetGame() {
-    resetTimer();
-
-    cards.forEach(card => {
-        card.classList.remove('flip');
-    })
+resetTimer();
+resetCardCount();  
+cards.forEach(card => {
+card.classList.remove('flip');
+ }) 
 }
 
 let hasFlippedCard = false;
@@ -58,12 +58,33 @@ function flipCard() {
 
 }
 
+// add delay to modal
+
+let cardCounter = 0; // make scope not global
+
 function checkForMatch() {
     if (firstCard.children[1].src === secondCard.children[1].src) {
+        cardCounter++;
+        // console.log(cardCounter);
+        if(cardCounter === 6){
+             modalWindow();
+             stopTimer();
+            // delayedModalWindow();   
+        }
         disableCards();
     } else {
         unflipCards();
     }
+}
+
+ function modalWindow() {
+
+    modal.style.visibility = 'visible';
+
+};
+
+function modalWindowClose() {
+    modal.style.visibility = 'hidden';
 }
 
 function disableCards() {
@@ -116,6 +137,11 @@ function onTimer() {
     }, 1000);
 }
 
+function stopTimer() {
+    window.clearInterval(interval);
+    status="stopped"
+}
+
 function resetTimer() {
     second = 0;
     minute = 0;
@@ -123,4 +149,16 @@ function resetTimer() {
     var timer = document.getElementById('myCounter').innerHTML;
     myCounter.innerHTML = "0 mins 0 secs";
     clearInterval(interval)
+    console.log(second)
 }
+
+function resetCardCount() {
+    cardCounter = 0;
+}
+
+const myModal = document.querySelector("#myModal");
+const modal = document.querySelector(".modal");
+const span = document.querySelector(".close")[0];
+// const window = document.querySelector(".modal-content");
+const tryAgain = document.querySelector(".tryAgain");
+const quit = document.querySelector(".quit")
