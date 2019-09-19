@@ -28,10 +28,10 @@ function startGame() {
 
 function resetGame() {
 resetTimer();
-    
+resetCardCount();  
 cards.forEach(card => {
 card.classList.remove('flip');
- })
+ }) 
 }
 
 let hasFlippedCard = false;
@@ -58,13 +58,40 @@ function flipCard() {
 
 }
 
+// add delay to modal
+
+let cardCounter = 0; // make scope not global
+
 function checkForMatch() {
     if (firstCard.children[1].src === secondCard.children[1].src) {
+        cardCounter++;
+        // console.log(cardCounter);
+        if(cardCounter === 6){
+            modalWindow();
+            delayedModalWindow();   
+        }
         disableCards();
     } else {
         unflipCards();
     }
 } 
+
+function modalWindow() {
+    if(cardCounter === 6){
+        modal = function(event){
+            modal.style.display = "block";
+
+        }            span.onclick = function() {
+            modal.style.display = "none";
+          }
+          window = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+    }
+
+}
 
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
@@ -125,3 +152,20 @@ function resetTimer() {
     clearInterval(interval)
     console.log(second)
 }
+
+function resetCardCount() {
+    cardCounter = 0;
+}
+
+const timeoutID;
+
+function delayedModalWindow() {
+  timeoutID = window.setTimeout( event => {
+      document.getElementsByClassName('.modal')
+  },1500);
+};
+
+const myModal = document.getElementById("myModal");
+const modal = document.getElementsByClassName("modal");
+const span = document.getElementsByClassName("close")[0];
+const window = document.getElementsByClassName("modal-content");
