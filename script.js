@@ -51,7 +51,7 @@ function flipCard() {
 
         return;
     }
-
+    
     secondCard = this;
 
     checkForMatch();
@@ -98,12 +98,12 @@ function getRandomCard() {
 var second = 0,
     minute = 0;
 hour = 0;
-var timer = document.getElementById('mycounter').innerHTML;
+var timer = document.getElementById('myCounter').innerHTML;
 var interval;
 
 function onTimer() {
     interval = setInterval(function () {
-        mycounter.innerHTML = minute + "mins " + second + "secs";
+        myCounter.innerHTML = minute + "mins " + second + "secs";
         second++;
         if (second == 60) {
             minute++;
@@ -120,8 +120,7 @@ function resetTimer() {
     second = 0;
     minute = 0;
     hour = 0;
-    var timer = document.getElementById('mycounter').innerHTML;
-    mycounter.innerHTML = "0 mins 0 secs";
+    var timer = document.getElementById('myCounter').innerHTML;
+    myCounter.innerHTML = "0 mins 0 secs";
     clearInterval(interval)
-    console.log(second)
 }
