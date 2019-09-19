@@ -69,7 +69,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 80%;
+    max-width: 85%;
     padding: 20px;
 }
 
@@ -77,15 +77,15 @@ button {
     background-color: white;
     border-radius: 20px;
     color: rgb(12, 0, 103, .5));
-    font-size: 1rem;
-    width: 100px;
-    height: 30px;
+    font-size: .5rem;
+    width: 75px;
+    height: 20px;
 }
 
 #myCounter {
     color: white;
     margin: 20px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bolder;
 }
 
@@ -102,6 +102,7 @@ button {
 .front-face {
     transform: rotateY(180deg);
 }
+
 
  /* Modal section/popup window */
 
@@ -138,7 +139,6 @@ button {
     cursor: pointer;
   }  
 
-
 /* media queries for phones and tablets*/
 /* portrait */
 @media only screen and (min-device-width: 320px) and (orientation: portrait) {
@@ -151,6 +151,10 @@ button {
         width: 4rem;
         height: 4rem;
     }
+
+    #myCounter {
+        font-size: .75rem;
+    }
 }
 
 @media only screen and (min-device-width: 375px) and (orientation: portrait) {
@@ -162,6 +166,10 @@ button {
     .memory-card {
         width: 4.5rem;
         height: 4.5rem;
+    }
+
+    #myCounter {
+        font-size: 1rem;
     }
 }
 
@@ -205,7 +213,7 @@ button {
     }
 
     .button {
-        width: 85%;
+        width: 100%;
     }
 
     button {
@@ -215,7 +223,7 @@ button {
     }
 
     #myCounter {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 }
 
@@ -235,7 +243,7 @@ button {
     }
 
     .button {
-        width: 85%;
+        width: 100%;
     }
 
     button {
@@ -319,7 +327,7 @@ button {
     }
 
     .button {
-        width: 85%;
+        width: 100%;
         padding: 10px;
     }
 
@@ -354,13 +362,13 @@ button {
     }
 
     button {
-        font-size: 1.5rem;
-        width: 150px;
-        height: 40px;
+        font-size: 1rem;
+        width: 100px;
+        height: 30px;
     }
 
     #myCounter {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: 40px;
     }
 }
@@ -398,11 +406,11 @@ button {
     }
 
     button {
-        font-size: 1.75rem;
+        font-size: 1rem;
     }
 
     #myCounter {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
     }
 }
 
@@ -427,14 +435,8 @@ button {
         padding: 40px;
     }
 
-    button {
-        font-size: 2rem;
-        width: 175px;
-        height: 50px;
-    }
-
     #myCounter {
-        font-size: 3rem;
+        font-size: 1.75rem;
     }
 
 }
