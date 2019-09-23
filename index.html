@@ -83,19 +83,28 @@
         <section class="button">
             <button class="start" onclick="startGame()">Start</button>
 
-            <div id="myCounter" class="timer"></div>
-
-            <button id="restart" onclick="resetGame()">Restart</button>
+            <button id="restart" class="reset" onclick="resetGame()">Restart</button>
         </section>
+
+        <section class="timer-container">
+            <div id="myCounter" class="timer"></div>
+        </section>
+
     </div> 
 
     <div id="myModal" class="modal">
+
             <div class="modal-content">
-                <h2>Congrats!</h2>
-                <p>You ate all the snacks in <span id=""> </span>!</p>
-                <button class="playAgain" onclick="playAgain()">I'm still hungry</button>
-                <button class="close">I'm full</button>
+                <!-- <span class="close">&times;</span> -->
+                 <p>You ate all the snacks!</p>
+
+                <button class="tryAgain" onclick="resetGame(), modalWindowClose()">I'm still hungry</button>
+
+                <button class="quit" onclick="modalWindowClose()">I'm full</button>
+
             </div>
+
+
     </div>
     
     <script src="script.js"></script>
